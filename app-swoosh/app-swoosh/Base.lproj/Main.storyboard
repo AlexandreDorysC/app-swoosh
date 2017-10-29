@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gOX-tD-XaH">
-                                <rect key="frame" x="147.66666666666669" y="40" width="119.00000000000006" height="20"/>
+                                <rect key="frame" x="147.66666666666666" y="40" width="118.99999999999997" height="20"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GO ALL IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L00-FA-NY2">
                                 <rect key="frame" x="77" y="145" width="260" height="70"/>
@@ -88,19 +88,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="bgImg" destination="WaN-bV-KOY" id="wpX-sR-amX"/>
-                        <outlet property="swoosh" destination="gOX-tD-XaH" id="2U0-OM-WKO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139.13043478260872" y="132.88043478260872"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="MNS-Zd-f2T">
             <objects>
-                <viewController id="8mu-j6-bNh" sceneMemberID="viewController">
+                <viewController id="8mu-j6-bNh" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b3F-Si-xbc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +108,7 @@
                                 <rect key="frame" x="0.0" y="40" width="414" height="66"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1tY-Um-pLR">
-                                        <rect key="frame" x="147.66666666666669" y="0.0" width="119.00000000000006" height="20"/>
+                                        <rect key="frame" x="147.66666666666666" y="0.0" width="118.99999999999997" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired League:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ov-2b-BEM">
                                         <rect key="frame" x="132" y="46" width="150" height="20"/>
@@ -136,6 +132,9 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextTapped:" destination="8mu-j6-bNh" eventType="touchUpInside" id="0dp-Nw-C85"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="efJ-D3-4an">
                                 <rect key="frame" x="20" y="156" width="374" height="190"/>
@@ -207,16 +206,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fGy-0c-eUm"/>
                     </view>
+                    <connections>
+                        <segue destination="7AS-bu-kMf" kind="show" identifier="skillVCSegue" id="r8v-FG-BGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9C-AP-Xx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9gX-zc-m46" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="972.46376811594212" y="131.25"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="QwK-Fv-AOU">
             <objects>
-                <viewController id="7AS-bu-kMf" sceneMemberID="viewController">
+                <viewController id="7AS-bu-kMf" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tLw-54-EmN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,7 +230,7 @@
                                 <rect key="frame" x="0.0" y="40" width="414" height="66"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ogV-jU-8Qu">
-                                        <rect key="frame" x="147.66666666666669" y="0.0" width="119.00000000000006" height="20"/>
+                                        <rect key="frame" x="147.66666666666666" y="0.0" width="118.99999999999997" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVj-Op-Yue">
                                         <rect key="frame" x="132" y="46" width="150" height="20"/>
